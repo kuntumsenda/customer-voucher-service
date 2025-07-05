@@ -30,8 +30,10 @@ type CreateBrandReq struct {
 }
 
 func (x *CreateBrandReq) Reset() {
-	*x = CreateBrandReq{}
-	mi := &file_brand_brand_proto_msgTypes[0]
+	*x = CreateBrandReq{
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}
+	mi := &fileBrandBrandProtoMsgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40,10 +42,12 @@ func (x *CreateBrandReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateBrandReq) ProtoMessage() {}
+func (*CreateBrandReq) ProtoMessage() {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}
 
 func (x *CreateBrandReq) ProtoReflect() protoreflect.Message {
-	mi := &file_brand_brand_proto_msgTypes[0]
+	mi := &fileBrandBrandProtoMsgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +60,7 @@ func (x *CreateBrandReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateBrandReq.ProtoReflect.Descriptor instead.
 func (*CreateBrandReq) Descriptor() ([]byte, []int) {
-	return file_brand_brand_proto_rawDescGZIP(), []int{0}
+	return fileBrandBrandProtoRawDescGZIP(), []int{0}
 }
 
 func (x *CreateBrandReq) GetName() string {
@@ -81,8 +85,10 @@ type CreateBrandRes struct {
 }
 
 func (x *CreateBrandRes) Reset() {
-	*x = CreateBrandRes{}
-	mi := &file_brand_brand_proto_msgTypes[1]
+	*x = CreateBrandRes{
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}
+	mi := &fileBrandBrandProtoMsgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -91,10 +97,12 @@ func (x *CreateBrandRes) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateBrandRes) ProtoMessage() {}
+func (*CreateBrandRes) ProtoMessage() {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}
 
 func (x *CreateBrandRes) ProtoReflect() protoreflect.Message {
-	mi := &file_brand_brand_proto_msgTypes[1]
+	mi := &fileBrandBrandProtoMsgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,7 +115,7 @@ func (x *CreateBrandRes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateBrandRes.ProtoReflect.Descriptor instead.
 func (*CreateBrandRes) Descriptor() ([]byte, []int) {
-	return file_brand_brand_proto_rawDescGZIP(), []int{1}
+	return fileBrandBrandProtoRawDescGZIP(), []int{1}
 }
 
 func (x *CreateBrandRes) GetIsSuccess() bool {
@@ -130,8 +138,10 @@ type Brand struct {
 }
 
 func (x *Brand) Reset() {
-	*x = Brand{}
-	mi := &file_brand_brand_proto_msgTypes[2]
+	*x = Brand{
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}
+	mi := &fileBrandBrandProtoMsgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -140,10 +150,12 @@ func (x *Brand) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Brand) ProtoMessage() {}
+func (*Brand) ProtoMessage() {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}
 
 func (x *Brand) ProtoReflect() protoreflect.Message {
-	mi := &file_brand_brand_proto_msgTypes[2]
+	mi := &fileBrandBrandProtoMsgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -156,7 +168,7 @@ func (x *Brand) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Brand.ProtoReflect.Descriptor instead.
 func (*Brand) Descriptor() ([]byte, []int) {
-	return file_brand_brand_proto_rawDescGZIP(), []int{2}
+	return fileBrandBrandProtoRawDescGZIP(), []int{2}
 }
 
 func (x *Brand) GetId() int32 {
@@ -208,8 +220,10 @@ type ListBrandReq struct {
 }
 
 func (x *ListBrandReq) Reset() {
-	*x = ListBrandReq{}
-	mi := &file_brand_brand_proto_msgTypes[3]
+	*x = ListBrandReq{
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}
+	mi := &fileBrandBrandProtoMsgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -218,10 +232,12 @@ func (x *ListBrandReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBrandReq) ProtoMessage() {}
+func (*ListBrandReq) ProtoMessage() {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}
 
 func (x *ListBrandReq) ProtoReflect() protoreflect.Message {
-	mi := &file_brand_brand_proto_msgTypes[3]
+	mi := &fileBrandBrandProtoMsgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -234,7 +250,7 @@ func (x *ListBrandReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListBrandReq.ProtoReflect.Descriptor instead.
 func (*ListBrandReq) Descriptor() ([]byte, []int) {
-	return file_brand_brand_proto_rawDescGZIP(), []int{3}
+	return fileBrandBrandProtoRawDescGZIP(), []int{3}
 }
 
 type ListBrandRes struct {
@@ -245,8 +261,10 @@ type ListBrandRes struct {
 }
 
 func (x *ListBrandRes) Reset() {
-	*x = ListBrandRes{}
-	mi := &file_brand_brand_proto_msgTypes[4]
+	*x = ListBrandRes{
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}
+	mi := &fileBrandBrandProtoMsgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -255,10 +273,12 @@ func (x *ListBrandRes) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBrandRes) ProtoMessage() {}
+func (*ListBrandRes) ProtoMessage() {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}
 
 func (x *ListBrandRes) ProtoReflect() protoreflect.Message {
-	mi := &file_brand_brand_proto_msgTypes[4]
+	mi := &fileBrandBrandProtoMsgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -271,7 +291,7 @@ func (x *ListBrandRes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListBrandRes.ProtoReflect.Descriptor instead.
 func (*ListBrandRes) Descriptor() ([]byte, []int) {
-	return file_brand_brand_proto_rawDescGZIP(), []int{4}
+	return fileBrandBrandProtoRawDescGZIP(), []int{4}
 }
 
 func (x *ListBrandRes) GetData() []*Brand {
@@ -281,9 +301,9 @@ func (x *ListBrandRes) GetData() []*Brand {
 	return nil
 }
 
-var File_brand_brand_proto protoreflect.FileDescriptor
+var FileBrandBrandProto protoreflect.FileDescriptor
 
-var file_brand_brand_proto_rawDesc = string([]byte{
+var fileBrandBrandProtoRawDesc = string([]byte{
 	0x0a, 0x11, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x2f, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x12, 0x05, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x22, 0x46, 0x0a, 0x0e, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x42, 0x72, 0x61, 0x6e, 0x64, 0x52, 0x65, 0x71, 0x12, 0x12, 0x0a, 0x04,
@@ -325,59 +345,65 @@ var file_brand_brand_proto_rawDesc = string([]byte{
 })
 
 var (
-	file_brand_brand_proto_rawDescOnce sync.Once
-	file_brand_brand_proto_rawDescData []byte
+	fileBrandBrandProtoRawDescOnce sync.Once
+	fileBrandBrandProtoRawDescData []byte
 )
 
-func file_brand_brand_proto_rawDescGZIP() []byte {
-	file_brand_brand_proto_rawDescOnce.Do(func() {
-		file_brand_brand_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_brand_brand_proto_rawDesc), len(file_brand_brand_proto_rawDesc)))
+func fileBrandBrandProtoRawDescGZIP() []byte {
+	fileBrandBrandProtoRawDescOnce.Do(func() {
+		fileBrandBrandProtoRawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(fileBrandBrandProtoRawDesc), len(fileBrandBrandProtoRawDesc)))
 	})
-	return file_brand_brand_proto_rawDescData
+	return fileBrandBrandProtoRawDescData
 }
 
-var file_brand_brand_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_brand_brand_proto_goTypes = []any{
+var fileBrandBrandProtoMsgTypes = make([]protoimpl.MessageInfo, 5)
+var fileBrandBrandProtoGoTypes = []any{
 	(*CreateBrandReq)(nil), // 0: brand.CreateBrandReq
 	(*CreateBrandRes)(nil), // 1: brand.CreateBrandRes
 	(*Brand)(nil),          // 2: brand.Brand
 	(*ListBrandReq)(nil),   // 3: brand.ListBrandReq
 	(*ListBrandRes)(nil),   // 4: brand.ListBrandRes
 }
-var file_brand_brand_proto_depIdxs = []int32{
-	2, // 0: brand.ListBrandRes.data:type_name -> brand.Brand
-	0, // 1: brand.BrandService.CreateBrand:input_type -> brand.CreateBrandReq
-	3, // 2: brand.BrandService.ListBrand:input_type -> brand.ListBrandReq
-	1, // 3: brand.BrandService.CreateBrand:output_type -> brand.CreateBrandRes
-	4, // 4: brand.BrandService.ListBrand:output_type -> brand.ListBrandRes
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
+var fileBrandBrandProtoDepIdxs = []int32{
+	2, // 0: brand.ListBrandRes.data:typeName -> brand.Brand
+	0, // 1: brand.BrandService.CreateBrand:inputType -> brand.CreateBrandReq
+	3, // 2: brand.BrandService.ListBrand:inputType -> brand.ListBrandReq
+	1, // 3: brand.BrandService.CreateBrand:outputType -> brand.CreateBrandRes
+	4, // 4: brand.BrandService.ListBrand:outputType -> brand.ListBrandRes
+	3, // [3:5] is the sub-list for method outputType
+	1, // [1:3] is the sub-list for method inputType
+	1, // [1:1] is the sub-list for extension typeName
 	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // [0:1] is the sub-list for field typeName
 }
 
-func init() { file_brand_brand_proto_init() }
-func file_brand_brand_proto_init() {
-	if File_brand_brand_proto != nil {
+func init() { fileBrandBrandProtoInit() }
+func fileBrandBrandProtoInit() {
+	if FileBrandBrandProto != nil {
 		return
 	}
-	file_brand_brand_proto_msgTypes[2].OneofWrappers = []any{}
-	type x struct{}
+	fileBrandBrandProtoMsgTypes[2].OneofWrappers = []any{
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}
+	type x struct {
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_brand_brand_proto_rawDesc), len(file_brand_brand_proto_rawDesc)),
+			GoPackagePath: reflect.TypeOf(x{
+				// NOSONAR : Auto-generated function, intentionally left blank
+			}).PkgPath(),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(fileBrandBrandProtoRawDesc), len(fileBrandBrandProtoRawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_brand_brand_proto_goTypes,
-		DependencyIndexes: file_brand_brand_proto_depIdxs,
-		MessageInfos:      file_brand_brand_proto_msgTypes,
+		GoTypes:           fileBrandBrandProtoGoTypes,
+		DependencyIndexes: fileBrandBrandProtoDepIdxs,
+		MessageInfos:      fileBrandBrandProtoMsgTypes,
 	}.Build()
-	File_brand_brand_proto = out.File
-	file_brand_brand_proto_goTypes = nil
-	file_brand_brand_proto_depIdxs = nil
+	FileBrandBrandProto = out.File
+	fileBrandBrandProtoGoTypes = nil
+	fileBrandBrandProtoDepIdxs = nil
 }

@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BrandService_CreateBrand_FullMethodName = "/brand.BrandService/CreateBrand"
-	BrandService_ListBrand_FullMethodName   = "/brand.BrandService/ListBrand"
+	BrandServiceCreateBrandFullMethodName = "/brand.BrandService/CreateBrand"
+	BrandServiceListBrandFullMethodName   = "/brand.BrandService/ListBrand"
 )
 
 // BrandServiceClient is the client API for BrandService service.
@@ -42,7 +42,7 @@ func NewBrandServiceClient(cc grpc.ClientConnInterface) BrandServiceClient {
 func (c *brandServiceClient) CreateBrand(ctx context.Context, in *CreateBrandReq, opts ...grpc.CallOption) (*CreateBrandRes, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CreateBrandRes)
-	err := c.cc.Invoke(ctx, BrandService_CreateBrand_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, BrandServiceCreateBrandFullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -52,7 +52,7 @@ func (c *brandServiceClient) CreateBrand(ctx context.Context, in *CreateBrandReq
 func (c *brandServiceClient) ListBrand(ctx context.Context, in *ListBrandReq, opts ...grpc.CallOption) (*ListBrandRes, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListBrandRes)
-	err := c.cc.Invoke(ctx, BrandService_ListBrand_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, BrandServiceListBrandFullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,7 +73,9 @@ type BrandServiceServer interface {
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedBrandServiceServer struct{}
+type UnimplementedBrandServiceServer struct {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}
 
 func (UnimplementedBrandServiceServer) CreateBrand(context.Context, *CreateBrandReq) (*CreateBrandRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBrand not implemented")
@@ -81,8 +83,12 @@ func (UnimplementedBrandServiceServer) CreateBrand(context.Context, *CreateBrand
 func (UnimplementedBrandServiceServer) ListBrand(context.Context, *ListBrandReq) (*ListBrandRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListBrand not implemented")
 }
-func (UnimplementedBrandServiceServer) mustEmbedUnimplementedBrandServiceServer() {}
-func (UnimplementedBrandServiceServer) testEmbeddedByValue()                      {}
+func (UnimplementedBrandServiceServer) mustEmbedUnimplementedBrandServiceServer() {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}
+func (UnimplementedBrandServiceServer) testEmbeddedByValue() {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}
 
 // UnsafeBrandServiceServer may be embedded to opt out of forward compatibility for this service.
 // Use of this interface is not recommended, as added methods to BrandServiceServer will
@@ -99,10 +105,16 @@ func RegisterBrandServiceServer(s grpc.ServiceRegistrar, srv BrandServiceServer)
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&BrandService_ServiceDesc, srv)
+	s.RegisterService(&BrandServiceServiceDesc, srv)
 }
 
-func _BrandService_CreateBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func BrandServiceCreateBrandHandler(srv interface {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}, ctx context.Context, dec func(interface {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}) error, interceptor grpc.UnaryServerInterceptor) (interface {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}, error) {
 	in := new(CreateBrandReq)
 	if err := dec(in); err != nil {
 		return nil, err
@@ -112,15 +124,25 @@ func _BrandService_CreateBrand_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: BrandService_CreateBrand_FullMethodName,
+		FullMethod: BrandServiceCreateBrandFullMethodName,
 	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+	handler := func(ctx context.Context, req interface {
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}) (interface {
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}, error) {
 		return srv.(BrandServiceServer).CreateBrand(ctx, req.(*CreateBrandReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BrandService_ListBrand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func BrandServiceListBrandHandler(srv interface {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}, ctx context.Context, dec func(interface {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}) error, interceptor grpc.UnaryServerInterceptor) (interface {
+	// NOSONAR : Auto-generated function, intentionally left blank
+}, error) {
 	in := new(ListBrandReq)
 	if err := dec(in); err != nil {
 		return nil, err
@@ -130,30 +152,36 @@ func _BrandService_ListBrand_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: BrandService_ListBrand_FullMethodName,
+		FullMethod: BrandServiceListBrandFullMethodName,
 	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+	handler := func(ctx context.Context, req interface {
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}) (interface {
+		// NOSONAR : Auto-generated function, intentionally left blank
+	}, error) {
 		return srv.(BrandServiceServer).ListBrand(ctx, req.(*ListBrandReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// BrandService_ServiceDesc is the grpc.ServiceDesc for BrandService service.
+// BrandServiceServiceDesc is the grpc.ServiceDesc for BrandService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var BrandService_ServiceDesc = grpc.ServiceDesc{
+var BrandServiceServiceDesc = grpc.ServiceDesc{
 	ServiceName: "brand.BrandService",
 	HandlerType: (*BrandServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateBrand",
-			Handler:    _BrandService_CreateBrand_Handler,
+			Handler:    BrandServiceCreateBrandHandler,
 		},
 		{
 			MethodName: "ListBrand",
-			Handler:    _BrandService_ListBrand_Handler,
+			Handler:    BrandServiceListBrandHandler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		// NOSONAR : Auto-generated function, intentionally left blank
+	},
 	Metadata: "brand/brand.proto",
 }
