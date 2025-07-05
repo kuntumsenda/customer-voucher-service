@@ -2,17 +2,16 @@ package brand_service
 
 import (
 	"context"
-	"customer-voucher-service/constants/message"
+	"customer-voucher-service/constants"
 	"customer-voucher-service/db"
 	"customer-voucher-service/models/brand_model"
 	pbBrand "customer-voucher-service/protogen/brand"
-	"errors"
-
-	"github.com/go-playground/validator/v10"
+	"customer-voucher-service/utils/validator"
 )
 
 type IBrandService interface {
 	CreateBrand(ctx context.Context, req *pbBrand.CreateBrandReq) (*pbBrand.CreateBrandRes, error)
+	ListBrand(ctx context.Context, req *pbBrand.ListBrandReq) (*pbBrand.ListBrandRes, error)
 }
 
 type BrandService struct {
@@ -21,7 +20,7 @@ type BrandService struct {
 }
 
 func NewBrandService() *BrandService {
-	return &BrandService{brandRepo: *brand_model.NewBrandRepo()}
+	return &BrandService{brandRepo: *brand_model.NewBrandRepo(db.DB)}
 }
 
 type createBrandReqValidate struct {
@@ -29,37 +28,44 @@ type createBrandReqValidate struct {
 	Description string `validate:"max=255"`
 }
 
-func validateCreateBrandReq(req *pbBrand.CreateBrandReq) error {
-	v := validator.New()
-	validateReq := createBrandReqValidate{
-		Name:        req.GetName(),
-		Description: req.GetDescription(),
-	}
-	if err := v.Struct(validateReq); err != nil {
-		for _, fieldErr := range err.(validator.ValidationErrors) {
-			switch fieldErr.Tag() {
-			case "required":
-				return errors.New(message.RequiredMessage(fieldErr.Field()))
-			case "max":
-				return errors.New(message.MaxLengthMessage(fieldErr.Field(), 255))
-			}
-		}
-		return errors.New("invalid request")
-	}
-	return nil
-}
-
 func (s *BrandService) CreateBrand(ctx context.Context, req *pbBrand.CreateBrandReq) (*pbBrand.CreateBrandRes, error) {
-	if err := validateCreateBrandReq(req); err != nil {
+	validateReq := createBrandReqValidate{
+		Name:        req.Name,
+		Description: req.Description,
+	}
+	if err := validator.ValidateReqField(validateReq); err != nil {
 		return &pbBrand.CreateBrandRes{IsSuccess: false}, err
 	}
 	brand := &brand_model.Brand{
-		Name:        req.GetName(),
-		Description: req.GetDescription(),
+		Name:        req.Name,
+		Description: req.Description,
 	}
-	err := s.brandRepo.CreateBrand(db.DB, brand)
+	err := s.brandRepo.CreateBrand(brand)
 	if err != nil {
-		return &pbBrand.CreateBrandRes{IsSuccess: false}, err
+		return nil, err
 	}
 	return &pbBrand.CreateBrandRes{IsSuccess: true}, nil
+}
+
+func (s *BrandService) ListBrand(ctx context.Context, req *pbBrand.ListBrandReq) (*pbBrand.ListBrandRes, error) {
+	result, err := s.brandRepo.ListBrand()
+	if err != nil {
+		return nil, err
+	}
+	list := []*pbBrand.Brand{}
+
+	for _, b := range result {
+		data := pbBrand.Brand{
+			Id:           int32(b.ID),
+			Name:         b.Name,
+			Description:  b.Description,
+			CreatedDate:  b.CreatedDate.Format(constants.FormatDate),
+			ModifiedDate: b.ModifiedDate.Format(constants.FormatDate),
+			IsDeleted:    &b.IsDeleted,
+		}
+		list = append(list, &data)
+	}
+	return &pbBrand.ListBrandRes{
+		Data: list,
+	}, nil
 }

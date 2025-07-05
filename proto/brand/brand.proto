@@ -24,7 +24,7 @@ message Brand {
   string description = 3;
   string createdDate = 4;
   string modifiedDate = 5;
-  string isDeleted = 6;
+  optional bool isDeleted = 6;
 }
 
 message ListBrandReq {}

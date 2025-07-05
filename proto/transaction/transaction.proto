@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package transaction;
+
+option go_package = "customer-voucher-service/protogen/transaction";
+
+service TransactionService {
+  rpc TransactionRedeemPoint(TransactionRedeemPointReq) returns (TransactionRedeemPointRes);
+  rpc ListTransaction(ListTransactionReq) returns (ListTransactionRes);
+  rpc DetailTransaction(DetailTransactionReq) returns (DetailTransactionRes);
+}
+
+message TransactionRedeemPointReq {
+  int32 customerId = 1;
+  int32 voucherId = 2;
+  int64 quantity = 3;
+}
+
+message TransactionRedeemPointRes {
+  bool isSuccess = 1;
+  Transaction data = 2;
+}
+
+message Transaction {
+  int32 id = 1;
+  int32 customerId = 2;
+  int32 voucherId = 3;
+  int64 quantity = 4;
+  int64 total = 5;
+  optional int32 status = 6;
+  string redeemDate = 7;
+  string createdDate = 8;
+  string modifiedDate = 9;
+  optional bool isDeleted = 10;
+  int64 VoucherCostInPoint = 11;
+}
+
+message ListTransactionReq {
+  optional int32 customerId = 1;
+}
+
+message ListTransactionRes{
+  repeated Transaction data = 1;
+}
+
+message DetailTransactionReq {
+  int32 id = 1;
+}
+
+message DetailTransactionRes {
+  Transaction data = 1;
+}

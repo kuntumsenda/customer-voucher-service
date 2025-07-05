@@ -6,7 +6,7 @@ type Customer struct {
 	ID           uint      `gorm:"primaryKey;autoIncrement" json:"id"`
 	FullName     string    `gorm:"type:varchar(255);not null" json:"full_name"`
 	Email        string    `gorm:"type:varchar(255);uniqueIndex;not null" json:"email"`
-	Points       int       `gorm:"default:0;not null" json:"points"`
+	Points       int64     `gorm:"default:0;not null" json:"points"`
 	IsDeleted    bool      `gorm:"default:false;not null" json:"is_deleted"`
 	CreatedDate  time.Time `gorm:"autoCreateTime" json:"created_date"`
 	CreatedBy    string    `gorm:"type:varchar(255)" json:"created_by"`

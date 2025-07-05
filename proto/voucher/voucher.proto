@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package voucher;
+
+option go_package = "customer-voucher-service/protogen/voucher";
+
+service VoucherService {
+  rpc CreateVoucher(CreateVoucherReq) returns (CreateVoucherRes);
+  rpc ListVoucher(ListVoucherReq) returns (ListVoucherRes);
+  rpc DetailVoucher(DetailVoucherReq) returns (DetailVoucherRes);
+  rpc UpdateVoucher(UpdateVoucherReq) returns (UpdateVoucherRes);
+}
+
+message CreateVoucherReq {
+  int32 brandId = 1;
+  string name = 2;
+  string description = 3;
+  int64 costInPoint = 4;
+  string voucherCode = 5;
+}
+
+message CreateVoucherRes {
+  bool isSuccess = 1;
+}
+
+message Voucher {
+  int32 id = 1;
+  int32 brandId = 2;
+  string name = 3;
+  string description = 4;
+  int64 costInPoint = 5;
+  string createdDate = 6;
+  string modifiedDate = 7;
+  optional bool isDeleted = 8;
+  string voucherCode = 9;
+}
+
+message ListVoucherReq {
+  optional int32 brandId = 1;
+}
+
+message ListVoucherRes{
+  repeated Voucher data = 1;
+}
+
+message UpdateVoucherReq {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  int64 costInPoint = 4;
+}
+
+message UpdateVoucherRes {
+  bool isSuccess = 1;
+}
+
+message DetailVoucherReq {
+  int32 id = 1;
+}
+
+message DetailVoucherRes{
+  Voucher data = 1;
+}

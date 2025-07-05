@@ -7,7 +7,8 @@ type Voucher struct {
 	BrandID      uint      `gorm:"not null" json:"brand_id"`
 	Name         string    `gorm:"type:varchar(255);not null" json:"name"`
 	Description  string    `gorm:"type:text" json:"description"`
-	CostInPoint  int       `gorm:"not null" json:"cost_in_point"`
+	VoucherCode  string    `gorm:"type:varchar(255);not null" json:"voucher_code"`
+	CostInPoint  int64     `gorm:"not null" json:"cost_in_point"`
 	IsDeleted    bool      `gorm:"default:false;not null" json:"is_deleted"`
 	CreatedDate  time.Time `gorm:"autoCreateTime" json:"created_date"`
 	CreatedBy    string    `gorm:"type:varchar(255)" json:"created_by"`

@@ -7,7 +7,7 @@ type APIResponse struct {
 	Code         string      `json:"code"`
 	Message      string      `json:"message,omitempty"`
 	MessageError string      `json:"messageError,omitempty"`
-	Result       interface{} `json:"data,omitempty"`
+	Result       interface{} `json:"result,omitempty"`
 }
 
 func Success(ctx *gin.Context, codeSystem string, result interface{}) {
