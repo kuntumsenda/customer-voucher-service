@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package brand;
+
+option go_package = "customer-voucher-service/protogen/brand";
+
+service BrandService {
+  rpc CreateBrand(CreateBrandReq) returns (CreateBrandRes);
+  rpc ListBrand(ListBrandReq) returns (ListBrandRes);
+}
+
+message CreateBrandReq {
+  string name = 1;
+  string description = 2;
+}
+
+message CreateBrandRes {
+  bool isSuccess = 1;
+}
+
+message Brand {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  string createdDate = 4;
+  string modifiedDate = 5;
+  string isDeleted = 6;
+}
+
+message ListBrandReq {}
+
+message ListBrandRes{
+    repeated Brand data = 1;
+}

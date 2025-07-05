@@ -1,12 +1,13 @@
 package routes
 
 import (
+	"customer-voucher-service/handlers/brand_handler"
 	"github.com/gin-gonic/gin"
 )
 
-func Routes(r *gin.Engine) {
+func ApiRoutes(r *gin.Engine) {
 	api := r.Group("/api")
 	{
-		RegisterAuthRoutes(api)
+		brand_handler.BrandRoutes(api)
 	}
 }
