@@ -20,14 +20,14 @@ type IVoucherService interface {
 
 type VoucherService struct {
 	pbVoucher.UnimplementedVoucherServiceServer
-	voucherRepo voucher_model.VoucherRepo
-	brandRepo   brand_model.BrandRepo
+	voucherRepo voucher_model.IVoucherRepo
+	brandRepo   brand_model.IBrandRepo
 }
 
 func NewVoucherService() *VoucherService {
 	return &VoucherService{
-		voucherRepo: *voucher_model.NewVoucherRepo(db.DB),
-		brandRepo:   *brand_model.NewBrandRepo(db.DB),
+		voucherRepo: voucher_model.NewVoucherRepo(db.DB),
+		brandRepo:   brand_model.NewBrandRepo(db.DB),
 	}
 }
 
@@ -107,6 +107,7 @@ func (s *VoucherService) DetailVoucher(ctx context.Context, req *pbVoucher.Detai
 		BrandId:      int32(result.BrandID),
 		Name:         result.Name,
 		Description:  result.Description,
+		VoucherCode:  result.VoucherCode,
 		CostInPoint:  result.CostInPoint,
 		CreatedDate:  result.CreatedDate.Format(constants.FormatDate),
 		ModifiedDate: result.ModifiedDate.Format(constants.FormatDate),
