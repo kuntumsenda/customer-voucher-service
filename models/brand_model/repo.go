@@ -4,7 +4,7 @@ import "gorm.io/gorm"
 
 type IBrandRepo interface {
 	CreateBrand(brand *Brand) error
-	ListBrand() (*[]Brand, error)
+	ListBrand() ([]*Brand, error)
 	FindBrandById(id uint) (*Brand, error)
 }
 

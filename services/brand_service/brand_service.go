@@ -16,11 +16,11 @@ type IBrandService interface {
 
 type BrandService struct {
 	pbBrand.UnimplementedBrandServiceServer
-	brandRepo brand_model.BrandRepo
+	brandRepo brand_model.IBrandRepo
 }
 
 func NewBrandService() *BrandService {
-	return &BrandService{brandRepo: *brand_model.NewBrandRepo(db.DB)}
+	return &BrandService{brandRepo: brand_model.NewBrandRepo(db.DB)}
 }
 
 type createBrandReqValidate struct {
