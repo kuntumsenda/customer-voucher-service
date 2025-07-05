@@ -22,16 +22,16 @@ type ITransactionService interface {
 
 type TransactionService struct {
 	pbTransaction.UnimplementedTransactionServiceServer
-	transactionRepo transaction_model.TransactionRepo
-	voucherRepo     voucher_model.VoucherRepo
-	customerRepo    customer_model.CustomerRepo
+	transactionRepo transaction_model.ITransactionRepo
+	voucherRepo     voucher_model.IVoucherRepo
+	customerRepo    customer_model.ICustomerRepo
 }
 
 func NewTransactionService() *TransactionService {
 	return &TransactionService{
-		transactionRepo: *transaction_model.NewTransactionRepo(db.DB),
-		voucherRepo:     *voucher_model.NewVoucherRepo(db.DB),
-		customerRepo:    *customer_model.NewCustomerRepo(db.DB),
+		transactionRepo: transaction_model.NewTransactionRepo(db.DB),
+		voucherRepo:     voucher_model.NewVoucherRepo(db.DB),
+		customerRepo:    customer_model.NewCustomerRepo(db.DB),
 	}
 }
 

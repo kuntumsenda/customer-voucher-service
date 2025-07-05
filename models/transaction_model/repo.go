@@ -51,3 +51,7 @@ func (r *TransactionRepo) ListTransaction(req *pb.ListTransactionReq) ([]*Transa
 	err := query.Find(&transactions).Error
 	return transactions, err
 }
+
+func (r *TransactionRepo) DetailTransaction(req *pb.DetailTransactionReq) (*Transaction, error) {
+	return r.FindTransactionById(uint(req.Id))
+}
