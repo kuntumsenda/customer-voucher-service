@@ -24,7 +24,7 @@ var (
 	ErrValidationFailed = AppError{
 		HttpCode: http.StatusBadRequest,
 		Code:     "4001",
-		Message:  "Validation error_base occurred",
+		Message:  "Invalid",
 	}
 
 	ErrInternalServer = AppError{

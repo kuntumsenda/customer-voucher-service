@@ -1,14 +1,20 @@
 package main
 
 import (
+	"customer-voucher-service/db"
 	"customer-voucher-service/routes"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
+	"log"
 )
 
-//TIP <p>To run your code, right-click the code and select <b>Run</b>.</p> <p>Alternatively, click
-// the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.</p>
-
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	db.InitDB()
 	r := gin.Default()
 
 	routes.ApiRoutes(r)
